@@ -12,7 +12,6 @@ COPY . /app
 # # (3) Copy explicity (single line)
 # COPY index.js package-lock.json package.json /app
 
-RUN rm .git
 RUN npm install
 EXPOSE 8080
 
