@@ -1,9 +1,3 @@
-// before rum
-//npm install express
-
-// to run 
-// npm start
-
 'use strict';
 
 const express = require('express');
@@ -12,14 +6,13 @@ const express = require('express');
 const PORT = 8080;
 const HOST = '0.0.0.0';
 const OS = require('os');
-const ENV = 'DEV';
-
+const ENV = process.env.APP_ENVIRONMENT || 'undefined';
 
 // App
 const app = express();
 app.get('/', (req, res) => {
   res.statusCode = 200;
-  const msg = 'Hello from Node v0.0.2!';
+  const msg = `Hello from ${ENV} environment`;
   res.send(msg);
 });
 
